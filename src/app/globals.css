@@ -35,3 +35,11 @@ body {
   z-index: 100;
   position: relative;
 }
+
+.hero-gradient {
+  background: linear-gradient(to right, rgb(0, 166, 255), rgb(255, 0, 76));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
