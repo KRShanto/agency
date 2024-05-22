@@ -61,7 +61,12 @@ export default function Solutions() {
             )}
             key={index}
           >
-            <div className="flex w-[950px] items-center justify-between gap-5 rounded-full border border-slate-600 p-8 py-5">
+            <div
+              className={cn(
+                "flex w-[950px] items-center justify-between gap-5 border border-slate-600 p-8 py-5",
+                index % 2 === 0 ? "rounded-r-full" : "rounded-l-full",
+              )}
+            >
               {index % 2 !== 0 && (
                 <Lottie
                   animationData={service.animation}
@@ -78,7 +83,9 @@ export default function Solutions() {
                 >
                   {service.title}
                 </h3>
-                <p className="text-xl text-slate-400">{service.description}</p>
+                <p className="mt-3 text-xl text-slate-400">
+                  {service.description}
+                </p>
               </div>
 
               {index % 2 === 0 && (
