@@ -21,12 +21,7 @@ export default function Hero() {
 
       <div>
         {/* TODO: more icons */}
-        <Image
-          src="/MainRocket.png"
-          alt="Hero Image"
-          width={400}
-          height={400}
-        />
+        <Image src="/Hero.png" alt="Hero Image" width={700} height={400} />
       </div>
     </div>
   );

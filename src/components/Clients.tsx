@@ -22,7 +22,7 @@ export default function Clients() {
     <div className="mt-32">
       <h2 className="text-center text-4xl font-bold">What Our Clients Say</h2>
 
-      <div className="mx-auto mt-14 grid w-[1100px] grid-cols-2 items-center justify-items-center gap-10">
+      <div className="relative mx-auto mt-14 grid w-[1100px] grid-cols-2 items-center justify-items-center gap-10">
         {clients.map((client, index) => (
           <div
             key={index}
@@ -47,6 +47,49 @@ export default function Clients() {
             </div>
           </div>
         ))}
+
+        <Image
+          src="/Social1.png"
+          alt="Social Icon"
+          width={70}
+          height={50}
+          className="absolute -top-20 left-28"
+        />
+        <Image
+          src="/Social2.png"
+          alt="Social Icon"
+          width={50}
+          height={50}
+          className="absolute -top-20 right-28"
+        />
+        <Image
+          src="/Social3.png"
+          alt="Social Icon"
+          width={40}
+          height={50}
+          className="absolute -bottom-20 left-28"
+        />
+        <Image
+          src="/Social4.png"
+          alt="Social Icon"
+          width={30}
+          height={50}
+          className="absolute -right-20"
+        />
+        <Image
+          src="/Social5.png"
+          alt="Social Icon"
+          width={50}
+          height={50}
+          className="absolute -left-20"
+        />
+        <Image
+          src="/Social6.png"
+          alt="Social Icon"
+          width={70}
+          height={50}
+          className="absolute -bottom-20 right-28"
+        />
       </div>
     </div>
   );

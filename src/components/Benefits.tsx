@@ -5,18 +5,22 @@ const benefits = [
   {
     title: "Rapid Delivery",
     description: "Receive your designs promptly, typically within days.",
+    image: "/Delivery.png",
   },
   {
     title: "Flexible Pricing",
     description: "Our rates are adaptable and budget-friendly.",
+    image: "/Pricing.png",
   },
   {
     title: "Lightning-Fast Websites",
     description: "Ensure a seamless user experience with swift loading times.",
+    image: "/Fast.png",
   },
   {
     title: "Stunning Designs",
     description: "Elevate your brand with visually captivating websites.",
+    image: "/Beautiful.png",
   },
 ];
 
@@ -35,7 +39,7 @@ export default function Benefits() {
           >
             {/* TODO */}
             <Image
-              src={`/MainRocket.png`}
+              src={benefit.image}
               width={100}
               height={70}
               alt={benefit.title}

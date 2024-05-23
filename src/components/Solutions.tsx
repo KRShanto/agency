@@ -8,6 +8,7 @@ import SEO from "@/../public/animations/SEO.json";
 import Shopping from "@/../public/animations/Shopping.json";
 import Website from "@/../public/animations/Website.json";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const services = [
@@ -65,6 +66,7 @@ export default function Solutions() {
               className={cn(
                 "flex w-[950px] items-center justify-between gap-5 border border-slate-600 p-8 py-5",
                 index % 2 === 0 ? "rounded-r-full" : "rounded-l-full",
+                index % 2 === 0 ? "bg-slate-800" : "bg-slate-900",
               )}
             >
               {index % 2 !== 0 && (
@@ -75,14 +77,37 @@ export default function Solutions() {
               )}
 
               <div className="h-full p-5">
-                <h3
+                <div
                   className={cn(
-                    "text-3xl font-semibold text-slate-300",
-                    index % 2 === 0 ? "text-start" : "text-end",
+                    "flex items-center gap-2",
+                    index % 2 === 0 ? "justify-start" : "justify-end",
                   )}
                 >
-                  {service.title}
-                </h3>
+                  {index % 2 === 0 && (
+                    <Image
+                      src={`/${index + 1}.png`}
+                      alt={service.title}
+                      width={60}
+                      height={60}
+                    />
+                  )}
+                  <h3
+                    className={cn(
+                      "text-3xl font-semibold text-slate-300",
+                      index % 2 === 0 ? "text-start" : "text-end",
+                    )}
+                  >
+                    {service.title}
+                  </h3>
+                  {index % 2 !== 0 && (
+                    <Image
+                      src={`/${index + 1}.png`}
+                      alt={service.title}
+                      width={60}
+                      height={60}
+                    />
+                  )}
+                </div>
                 <p className="mt-3 text-xl text-slate-400">
                   {service.description}
                 </p>
