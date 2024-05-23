@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import GradientButton from "./GradientButton";
 
-// TODO: use 3d icons
+// TODO: use images
 const socials = [
   {
     name: "Facebook",
@@ -45,7 +45,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <div className="mt-32 flex items-center justify-between">
+    <div className="mt-32 flex items-center justify-between gap-5 max-[700px]:flex-col">
       <h2 className="hero-gradient inline text-2xl font-bold">{SITE_NAME}</h2>
       <div className="flex space-x-4">
         {socials.map((social) => (

@@ -27,17 +27,16 @@ const benefits = [
 export default function Benefits() {
   return (
     <div className="mt-32">
-      <h2 className="text-center text-4xl font-bold">
+      <h2 className="text-center text-4xl font-bold max-[600px]:text-3xl">
         Benefits Working With Us
       </h2>
 
-      <div className="mx-auto mt-14 grid w-[1100px] grid-cols-2 items-center justify-items-center gap-10">
+      <div className="mx-auto mt-14 grid w-[1100px] grid-cols-2 items-center justify-items-center gap-10 max-[1200px]:w-full max-[1000px]:grid-cols-1">
         {benefits.map((benefit, index) => (
           <div
             key={index}
-            className="flex w-[500px] flex-col items-center gap-2 rounded-lg border-slate-700 p-3"
+            className="flex w-[500px] flex-col items-center gap-2 rounded-lg border-slate-700 p-3 max-[600px]:w-full"
           >
-            {/* TODO */}
             <Image
               src={benefit.image}
               width={100}
@@ -47,7 +46,9 @@ export default function Benefits() {
             <h3 className="text-2xl font-bold text-slate-300">
               {benefit.title}
             </h3>
-            <p className="text-slate-400">{benefit.description}</p>
+            <p className="text-slate-400 max-[600px]:text-center">
+              {benefit.description}
+            </p>
           </div>
         ))}
       </div>

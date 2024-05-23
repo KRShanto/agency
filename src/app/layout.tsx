@@ -19,7 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, "px-[300px] py-10")}>
+      <body
+        className={cn(
+          inter.className,
+          "px-[10vw] py-10 max-[1700px]:px-[5vw] max-[600px]:px-5",
+        )}
+      >
         <Header />
         {children}
         <Footer />

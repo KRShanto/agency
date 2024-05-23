@@ -9,6 +9,7 @@ import Shopping from "@/../public/animations/Shopping.json";
 import Website from "@/../public/animations/Website.json";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { useMediaQuery } from "react-responsive";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const services = [
@@ -49,79 +50,101 @@ const services = [
 ];
 
 export default function Solutions() {
+  const is1000px = useMediaQuery({ query: "(max-width: 1000px)" });
+
   return (
     <div className="mt-32">
-      <h2 className="text-center text-4xl font-bold">Our Business Solutions</h2>
+      <h2 className="text-center text-4xl font-bold max-[600px]:text-3xl">
+        Our Business Solutions
+      </h2>
 
-      <div className="mt-14 flex flex-col gap-20">
-        {services.map((service, index) => (
-          <div
-            className={cn(
-              "flex",
-              index % 2 === 0 ? "flex-row" : "flex-row-reverse",
-            )}
-            key={index}
-          >
+      <div className="mt-14 flex flex-col gap-20 max-[1000px]:items-center">
+        {services.map((service, index) =>
+          !is1000px ? (
             <div
               className={cn(
-                "flex w-[950px] items-center justify-between gap-5 border border-slate-600 p-8 py-5",
-                index % 2 === 0 ? "rounded-r-full" : "rounded-l-full",
-                index % 2 === 0 ? "bg-slate-800" : "bg-slate-900",
+                "flex",
+                index % 2 === 0 ? "flex-row" : "flex-row-reverse",
               )}
+              key={index}
             >
-              {index % 2 !== 0 && (
-                <Lottie
-                  animationData={service.animation}
-                  style={{ width: 200, height: 200 }}
-                />
-              )}
+              <div
+                className={cn(
+                  "flex w-[950px] items-center justify-between gap-5 border border-slate-600 p-8 py-5 max-[1100px]:p-4 max-[1100px]:px-5",
+                  index % 2 === 0 ? "rounded-r-full" : "rounded-l-full",
+                  index % 2 === 0 ? "bg-slate-800" : "bg-slate-900",
+                )}
+              >
+                {index % 2 !== 0 && (
+                  <Lottie
+                    animationData={service.animation}
+                    style={{ width: 200, height: 200 }}
+                  />
+                )}
 
-              <div className="h-full p-5">
-                <div
-                  className={cn(
-                    "flex items-center gap-2",
-                    index % 2 === 0 ? "justify-start" : "justify-end",
-                  )}
-                >
-                  {index % 2 === 0 && (
-                    <Image
-                      src={`/${index + 1}.png`}
-                      alt={service.title}
-                      width={60}
-                      height={60}
-                    />
-                  )}
-                  <h3
+                <div className="h-full p-5">
+                  <div
                     className={cn(
-                      "text-3xl font-semibold text-slate-300",
-                      index % 2 === 0 ? "text-start" : "text-end",
+                      "flex items-center gap-2",
+                      index % 2 === 0 ? "justify-start" : "justify-end",
                     )}
                   >
-                    {service.title}
-                  </h3>
-                  {index % 2 !== 0 && (
-                    <Image
-                      src={`/${index + 1}.png`}
-                      alt={service.title}
-                      width={60}
-                      height={60}
-                    />
-                  )}
+                    {index % 2 === 0 && (
+                      <Image
+                        src={`/${index + 1}.png`}
+                        alt={service.title}
+                        width={60}
+                        height={60}
+                      />
+                    )}
+                    <h3
+                      className={cn(
+                        "text-3xl font-semibold text-slate-300",
+                        index % 2 === 0 ? "text-start" : "text-end",
+                      )}
+                    >
+                      {service.title}
+                    </h3>
+                    {index % 2 !== 0 && (
+                      <Image
+                        src={`/${index + 1}.png`}
+                        alt={service.title}
+                        width={60}
+                        height={60}
+                      />
+                    )}
+                  </div>
+                  <p className="mt-3 text-xl text-slate-400">
+                    {service.description}
+                  </p>
                 </div>
-                <p className="mt-3 text-xl text-slate-400">
-                  {service.description}
-                </p>
-              </div>
 
-              {index % 2 === 0 && (
-                <Lottie
-                  animationData={service.animation}
-                  style={{ width: 200, height: 200 }}
-                />
-              )}
+                {index % 2 === 0 && (
+                  <Lottie
+                    animationData={service.animation}
+                    style={{ width: 200, height: 200 }}
+                  />
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          ) : (
+            <div
+              key={index}
+              className="flex w-[600px] flex-col items-center gap-5 rounded-lg border border-slate-700 p-3 px-5 max-[700px]:w-full"
+            >
+              <Lottie
+                animationData={service.animation}
+                style={{ width: 200, height: 200 }}
+              />
+              <h3 className="text-center text-2xl font-bold text-slate-300">
+                {service.title}
+              </h3>
+              <p className="text-center text-xl text-slate-400">
+                {service.description}
+              </p>
+            </div>
+          ),
+        )}
       </div>
     </div>
   );

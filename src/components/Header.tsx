@@ -8,7 +8,7 @@ export default function Header() {
       <h1 className="text-3xl font-bold text-yellow-400">ShortFlows</h1>
 
       {/* TODO: calendly link */}
-      <GradientButton className="text-lg font-semibold">
+      <GradientButton className="text-lg font-semibold max-[600px]:text-sm">
         Book a meeting
       </GradientButton>
     </div>

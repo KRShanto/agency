@@ -20,15 +20,19 @@ const clients = [
 export default function Clients() {
   return (
     <div className="mt-32">
-      <h2 className="text-center text-4xl font-bold">What Our Clients Say</h2>
+      <h2 className="text-center text-4xl font-bold max-[600px]:text-3xl">
+        What Our Clients Say
+      </h2>
 
-      <div className="relative mx-auto mt-14 grid w-[1100px] grid-cols-2 items-center justify-items-center gap-10">
+      <div className="relative mx-auto mt-14 grid w-[1100px] grid-cols-2 items-center justify-items-center gap-10 max-[1300px]:w-[900px] max-[1200px]:w-full max-[1000px]:grid-cols-1 max-[900px]:mt-32">
         {clients.map((client, index) => (
           <div
             key={index}
-            className="flex w-[500px] flex-col items-center gap-5 rounded-lg border border-slate-700 p-3 px-5"
+            className="flex w-[500px] flex-col items-center gap-5 rounded-lg border border-slate-700 p-3 px-5 max-[1300px]:w-[400px] max-[600px]:w-full"
           >
-            <p className="mt-2 text-xl text-slate-300">{client.review}</p>
+            <p className="mt-2 text-xl text-slate-300 max-[1300px]:text-lg">
+              {client.review}
+            </p>
 
             <div className="flex w-full items-center gap-5">
               <Image
@@ -53,42 +57,42 @@ export default function Clients() {
           alt="Social Icon"
           width={70}
           height={50}
-          className="absolute -top-20 left-28"
+          className="absolute -top-20 left-28 max-[600px]:left-10"
         />
         <Image
           src="/Social2.png"
           alt="Social Icon"
           width={50}
           height={50}
-          className="absolute -top-20 right-28"
+          className="absolute -top-20 right-28 max-[600px]:right-10"
         />
         <Image
           src="/Social3.png"
           alt="Social Icon"
           width={40}
           height={50}
-          className="absolute -bottom-20 left-28"
+          className="absolute -bottom-20 left-28 max-[600px]:left-10"
         />
         <Image
           src="/Social4.png"
           alt="Social Icon"
           width={30}
           height={50}
-          className="absolute -right-20"
+          className="absolute -right-20 max-[1000px]:right-0"
         />
         <Image
           src="/Social5.png"
           alt="Social Icon"
           width={50}
           height={50}
-          className="absolute -left-20"
+          className="absolute -left-20 max-[1000px]:left-0"
         />
         <Image
           src="/Social6.png"
           alt="Social Icon"
           width={70}
           height={50}
-          className="absolute -bottom-20 right-28"
+          className="absolute -bottom-20 right-28 max-[600px]:right-10"
         />
       </div>
     </div>
