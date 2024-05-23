@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { cn } from "@/lib/cn";
 import Footer from "@/components/Footer";
+import AOSanimate from "@/components/AOSanimate";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +27,7 @@ export default function RootLayout({
         )}
       >
         <Header />
-        {children}
+        <AOSanimate>{children}</AOSanimate>
         <Footer />
       </body>
     </html>

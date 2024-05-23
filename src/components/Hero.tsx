@@ -23,10 +23,16 @@ export default function Hero() {
             className="mt-10"
           />
         )}
-        <h2 className="mt-5 text-3xl font-semibold max-[1100px]:mt-20 max-[600px]:text-center max-[600px]:text-2xl">
+        <h2
+          className="mt-5 text-3xl font-semibold max-[1100px]:mt-20 max-[600px]:text-center max-[600px]:text-2xl"
+          data-aos="fade-up"
+        >
           Boost your business quickly
         </h2>
-        <p className="mt-14 w-[700px] text-xl leading-10 text-slate-300 max-[1300px]:w-[500px] max-[1100px]:w-full max-[1100px]:px-10 max-[1100px]:text-center max-[600px]:p-0 max-[600px]:text-lg">
+        <p
+          className="mt-14 w-[700px] text-xl leading-10 text-slate-300 max-[1300px]:w-[500px] max-[1100px]:w-full max-[1100px]:px-10 max-[1100px]:text-center max-[600px]:p-0 max-[600px]:text-lg"
+          data-aos="fade-up"
+        >
           Whether you&rsquo;re a startup looking to make a splash or an
           established business aiming to refresh your online presence,{" "}
           {SITE_NAME} is your trusted partner in achieving digital excellence.
@@ -37,7 +43,13 @@ export default function Hero() {
 
       <div>
         {!is1100px && (
-          <Image src="/Hero.png" alt="Hero Image" width={700} height={400} />
+          <Image
+            src="/Hero.png"
+            alt="Hero Image"
+            width={700}
+            height={400}
+            data-aos="fade-left"
+          />
         )}
       </div>
     </div>

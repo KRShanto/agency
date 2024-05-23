@@ -58,7 +58,7 @@ export default function Solutions() {
         Our Business Solutions
       </h2>
 
-      <div className="mt-14 flex flex-col gap-20 max-[1000px]:items-center">
+      <div className="mt-14 flex flex-col gap-32 max-[1000px]:items-center max-[1000px]:gap-20">
         {services.map((service, index) =>
           !is1000px ? (
             <div
@@ -74,6 +74,7 @@ export default function Solutions() {
                   index % 2 === 0 ? "rounded-r-full" : "rounded-l-full",
                   index % 2 === 0 ? "bg-slate-800" : "bg-slate-900",
                 )}
+                data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
               >
                 {index % 2 !== 0 && (
                   <Lottie
@@ -131,6 +132,7 @@ export default function Solutions() {
             <div
               key={index}
               className="flex w-[600px] flex-col items-center gap-5 rounded-lg border border-slate-700 p-3 px-5 max-[700px]:w-full"
+              data-aos="fade-up"
             >
               <Lottie
                 animationData={service.animation}
