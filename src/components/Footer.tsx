@@ -8,6 +8,7 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import GradientButton from "./GradientButton";
+import BookMeeting from "./BookMeeting";
 
 // TODO: use images
 const socials = [
@@ -60,9 +61,7 @@ export default function Footer() {
           </a>
         ))}
       </div>
-      <GradientButton className="text-lg font-semibold">
-        Book a meeting
-      </GradientButton>
+      <BookMeeting />
     </div>
   );
 }

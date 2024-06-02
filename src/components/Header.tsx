@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import GradientButton from "./GradientButton";
+import BookMeeting from "./BookMeeting";
 
 export default function Header() {
   return (
@@ -7,10 +9,7 @@ export default function Header() {
       {/* TODO: Logo */}
       <h1 className="text-3xl font-bold text-yellow-400">ShortFlows</h1>
 
-      {/* TODO: calendly link */}
-      <GradientButton className="text-lg font-semibold max-[600px]:text-sm">
-        Book a meeting
-      </GradientButton>
+      <BookMeeting />
     </div>
   );
 }
